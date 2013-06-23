@@ -20,7 +20,6 @@ public class FractionalInt {
     public BigInteger getNumerator() {
         return numerator;
     }
-
     public FractionalInt(final BigInteger numerator, final BigInteger denominator) {
         if(numerator == null || denominator == null) throw new IllegalArgumentException("null input!");
         if(denominator.equals(BigInteger.ZERO)) throw new ArithmeticException("denominator == 0!");
