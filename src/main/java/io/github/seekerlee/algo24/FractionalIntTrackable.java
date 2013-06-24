@@ -60,4 +60,5 @@ public class FractionalIntTrackable implements TrackableArith{
     public ArithTracker getArithTracker() {
         return this.tracker;
     }
+
 }
