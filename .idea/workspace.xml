@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10fb5bd3-3893-41e4-aac3-c63ee9694e82" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/io/github/seekerlee/algo24/test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/Algo24.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/Algo24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalInt.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalInt.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalIntTrackable.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalIntTrackable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/io/github/seekerlee/algo24/test.java" afterPath="$PROJECT_DIR$/src/test/java/io/github/seekerlee/algo24/test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mavent.iws" />
@@ -13,7 +12,7 @@
     <file path="/fragment.java" changelist="10fb5bd3-3893-41e4-aac3-c63ee9694e82" time="1371917002682" ignored="false" />
     <file path="/FractionalInt.java" changelist="10fb5bd3-3893-41e4-aac3-c63ee9694e82" time="1371960980690" ignored="false" />
     <file path="/FractionalIntTest.java" changelist="10fb5bd3-3893-41e4-aac3-c63ee9694e82" time="1371918418877" ignored="false" />
-    <file path="/Dummy.txt" changelist="10fb5bd3-3893-41e4-aac3-c63ee9694e82" time="1372090402034" ignored="false" />
+    <file path="/Dummy.txt" changelist="10fb5bd3-3893-41e4-aac3-c63ee9694e82" time="1372090464043" ignored="false" />
     <file path="/FractionTracker.java" changelist="10fb5bd3-3893-41e4-aac3-c63ee9694e82" time="1371957507535" ignored="false" />
     <file path="/Operator.java" changelist="10fb5bd3-3893-41e4-aac3-c63ee9694e82" time="1371964735561" ignored="false" />
     <file path="/TrackableArith.java" changelist="10fb5bd3-3893-41e4-aac3-c63ee9694e82" time="1371966359675" ignored="false" />
@@ -84,10 +83,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FractionalIntTrackable.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FractionalIntTrackable.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalIntTrackable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="22" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0">
+            <state line="72" column="38" selection-start="2562" selection-end="2562" vertical-scroll-proportion="3.9310346">
               <folding />
             </state>
           </provider>
@@ -105,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FractionalInt.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FractionalInt.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalInt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="8" selection-start="3574" selection-end="3574" vertical-scroll-proportion="0.33240998">
+            <state line="97" column="52" selection-start="3669" selection-end="3669" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -128,18 +127,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="7" column="17" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Algo24.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/Algo24.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="34" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#246#270#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -629,7 +616,11 @@
       <created>1372082147254</created>
       <updated>1372082147254</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge branch 'master' of https://github.com/seekerlee/Ultimate24&#10;&#10;Conflicts:&#10;&#9;src/main/java/io/github/seekerlee/algo24/Algo24.java&#10;">
+      <created>1372090497611</created>
+      <updated>1372090497611</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -795,13 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/TrackableArith.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/ArithTracker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="79" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0">
@@ -843,16 +827,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalIntTrackable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalInt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="22" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0">
+        <state line="97" column="52" selection-start="3669" selection-end="3669" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalInt.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/TrackableArith.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="8" selection-start="3574" selection-end="3574" vertical-scroll-proportion="0.33240998">
+        <state line="7" column="17" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/seekerlee/algo24/FractionalIntTrackable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="38" selection-start="2562" selection-end="2562" vertical-scroll-proportion="3.9310346">
           <folding />
         </state>
       </provider>

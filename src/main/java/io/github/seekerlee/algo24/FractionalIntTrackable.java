@@ -7,7 +7,7 @@ import java.math.BigInteger;
  * Date: 13-6-23
  * Time: 上午11:15
  */
-public class FractionalIntTrackable implements TrackableArith{
+public class FractionalIntTrackable implements TrackableArith, Comparable<FractionalIntTrackable>{
     private ArithTracker<FractionalIntTrackable> tracker;
     private FractionalInt fraction;
     public FractionalIntTrackable(FractionalInt fraction, ArithTracker<FractionalIntTrackable> tracker) {
@@ -61,4 +61,13 @@ public class FractionalIntTrackable implements TrackableArith{
         return this.tracker;
     }
 
+    @Override
+    public int compareTo(FractionalIntTrackable o) {
+        return this.subtract(o).getDenominator().compareTo(BigInteger.ZERO);  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);    //TODO: implement strict compare include tracker
+    }
 }
