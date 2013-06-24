@@ -3,7 +3,7 @@ package io.github.seekerlee.algo24;
 import java.math.BigInteger;
 
 /**
- * Created with BigIntegerelliJ IDEA.
+ * Created with IntegerelliJ IDEA.
  * User: seeker
  * Date: 13-6-22
  * Time: 上午11:44

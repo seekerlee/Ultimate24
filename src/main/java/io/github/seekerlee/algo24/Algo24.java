@@ -10,14 +10,16 @@ import java.util.Set;
  * Time: 上午9:59
  */
 public class Algo24 {
-    private Set<FractionalIntTrackable> resultSet = new HashSet<FractionalIntTrackable>();
-    public Set<FractionalIntTrackable> doAlgo(List<FractionalIntTrackable> input, FractionalInt target) {
-        // 0. return right answer if input size is 1
-        if (input.size() == 1) {
-        }
-        // 1. make pair
+    public static Set<FractionalIntTrackable> algo24(List<FractionalIntTrackable> input) {
+        Set<FractionalIntTrackable> result = new HashSet<FractionalIntTrackable>();
 
-        return null;
+        return result;
+    }
+
+    private static void doit(List<FractionalIntTrackable> input, Set<FractionalIntTrackable> output) {
+        // TODO: check input
+        // end of recursion
+
     }
 
     private class PairedSet<T> {
