@@ -15,6 +15,11 @@ public class FractionalIntTrackable implements TrackableArith, Comparable<Fracti
         this.tracker = tracker;
     }
 
+    public FractionalIntTrackable(FractionalInt fraction) {
+        this.fraction = fraction;
+        this.tracker = null;
+    }
+
     public BigInteger getDenominator() {
         return fraction.getDenominator();
     }
@@ -49,7 +54,11 @@ public class FractionalIntTrackable implements TrackableArith, Comparable<Fracti
     }
 
     public String toRichString() {
-        return tracker.getlValue() + " " + tracker.getOp() + " " + tracker.getrValue() + " " + Operator.EQUAL + " " + fraction.toString();
+        if(tracker == null) {
+            return this.toString();
+        } else {
+            return tracker.getlValue() + " " + tracker.getOp() + " " + tracker.getrValue() + " " + Operator.EQUAL + " " + fraction.toString();
+        }
     }
 
     public FractionalInt getFraction() {

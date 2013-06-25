@@ -1,5 +1,7 @@
 package io.github.seekerlee.algo24;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,23 +28,44 @@ public class Algo24 {
         if (in.size() == 1) {
             if (in.get(0).getFraction().equals(goal)) {
                 output.add(in.get(0));
-            } else {
-                return;
             }
+            return;
         }
         // in process of recursion
+        Set<Pair> existP = new HashSet<Pair>();
         for (int i = 0; i < in.size() - 1; i ++) {
             for (int j = i + 1; j < in.size(); j++) {
-
+                Pair p = new Pair(in.get(i), in.get(j));
+                if (existP.contains(p)) {
+                    continue;
+                } else {
+                    existP.add(p);
+                    List<FractionalIntTrackable> expand = p.expand();
+                    for (FractionalIntTrackable f : expand) {
+                        List<FractionalIntTrackable> copy = new ArrayList<FractionalIntTrackable>(in);
+                        copy.remove(j);
+                        copy.remove(i);
+                        copy.add(f);
+                        doit(copy);
+                    }
+                }
             }
         }
     }
 
-    private class PairedSet<T> {
-        private Set<T> remainSet;
+    public List<FractionalIntTrackable> getInput() {
+        return input;
     }
 
-    private class Pair {
+    public Set<FractionalIntTrackable> getOutput() {
+        return output;
+    }
+
+    public FractionalInt getGoal() {
+        return goal;
+    }
+
+    private static class Pair {
         private FractionalIntTrackable pairL;
         private FractionalIntTrackable pairR;
         public Pair(FractionalIntTrackable pairL, FractionalIntTrackable pairR) {
@@ -53,6 +76,22 @@ public class Algo24 {
                 this.pairL = pairR;
                 this.pairR = pairL;
             }
+        }
+
+        public List<FractionalIntTrackable> expand() {
+            List<FractionalIntTrackable> l = new ArrayList<FractionalIntTrackable>(6);
+            l.add(pairL.add(pairR));
+            l.add(pairL.subtract(pairR));
+            l.add(pairL.multiply(pairR));
+            l.add(pairR.subtract(pairL));
+            if(!pairL.getNumerator().equals(BigInteger.ZERO)) l.add(pairR.divide(pairL));
+            if(!pairR.getNumerator().equals(BigInteger.ZERO)) l.add(pairL.divide(pairR));
+            return l;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            return super.equals(obj);    //TODO
         }
     }
 }
