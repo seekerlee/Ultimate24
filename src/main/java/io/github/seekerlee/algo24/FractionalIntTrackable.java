@@ -76,7 +76,28 @@ public class FractionalIntTrackable implements TrackableArith, Comparable<Fracti
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);    //TODO: implement strict compare include tracker
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+
+        if (!(o instanceof FractionalIntTrackable))
+            return false;
+
+        FractionalIntTrackable f = (FractionalIntTrackable) o;
+        boolean eq = this.fraction.equals(f.fraction);
+        if(!eq) return false;
+        if(this.tracker == null && f.tracker == null) return true;
+        if(this.tracker == null || f.tracker == null) return false;
+
+        return this.tracker.equals(f.tracker);
+    }
+
+    @Override
+    public int hashCode() {
+        if(this.tracker != null) {
+            return this.tracker.hashCode() * 31 + this.fraction.hashCode();
+        } else {
+            return this.fraction.hashCode();
+        }
     }
 }

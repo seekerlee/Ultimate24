@@ -14,13 +14,11 @@ public class Algo24Test {
     public static void main(String[] a) {
         ArrayList<FractionalIntTrackable> input = new ArrayList<FractionalIntTrackable>();
         input.add(new FractionalIntTrackable(new FractionalInt(3)));
+        input.add(new FractionalIntTrackable(new FractionalInt(4)));
         input.add(new FractionalIntTrackable(new FractionalInt(8)));
         input.add(new FractionalIntTrackable(new FractionalInt(3)));
-        input.add(new FractionalIntTrackable(new FractionalInt(8)));
-        input.add(new FractionalIntTrackable(new FractionalInt(800)));
-        input.add(new FractionalIntTrackable(new FractionalInt(64)));
         long t0 = System.currentTimeMillis();
-        Algo24 al = new Algo24(input, new FractionalInt(23));
+        Algo24 al = new Algo24(input, new FractionalInt(24));
         long t1 = System.currentTimeMillis();
 
         Set<FractionalIntTrackable> o = al.getOutput();

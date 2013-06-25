@@ -90,8 +90,20 @@ public class Algo24 {
         }
 
         @Override
-        public boolean equals(Object obj) {
-            return super.equals(obj);    //TODO
+        public boolean equals(Object o) {
+            if (o == this)
+                return true;
+
+            if (!(o instanceof Pair))
+                return false;
+
+            Pair p = (Pair)o;
+            return p.pairL.equals(this.pairL) &&  p.pairR.equals(this.pairR);
+        }
+
+        @Override
+        public int hashCode() {
+            return 31 * pairL.hashCode() + pairR.hashCode();
         }
     }
 }
