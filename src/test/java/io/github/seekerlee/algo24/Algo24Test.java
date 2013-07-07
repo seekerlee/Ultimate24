@@ -17,8 +17,10 @@ public class Algo24Test {
         input.add(new FractionalIntTrackable(new FractionalInt(4)));
         input.add(new FractionalIntTrackable(new FractionalInt(8)));
         input.add(new FractionalIntTrackable(new FractionalInt(3)));
+        input.add(new FractionalIntTrackable(new FractionalInt(91)));
+        input.add(new FractionalIntTrackable(new FractionalInt(97)));
         long t0 = System.currentTimeMillis();
-        Algo24 al = new Algo24(input, new FractionalInt(24));
+        Algo24 al = new Algo24(input, new FractionalInt(129));
         long t1 = System.currentTimeMillis();
 
         Set<FractionalIntTrackable> o = al.getOutput();
