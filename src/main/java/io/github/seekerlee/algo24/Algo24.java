@@ -1,10 +1,7 @@
 package io.github.seekerlee.algo24;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * User: seeker
@@ -12,15 +9,23 @@ import java.util.Set;
  * Time: 上午9:59
  */
 public class Algo24 {
-    final Set<FractionalIntTrackable> output = new HashSet<FractionalIntTrackable>();
+    final Set<FractionalIntTrackable> output = new HashSet<>();
     final List<FractionalIntTrackable> input;
     final FractionalInt goal;
 
-    public Algo24(List<FractionalIntTrackable> input, FractionalInt goal) {
+    public Algo24(FractionalInt goal, List<FractionalIntTrackable> input) {
         // TODO: check input
         this.input = input;
         this.goal = goal;
         doit(input);
+    }
+
+    public static Algo24 newAlgo24(int goal, int... input) {
+        ArrayList<FractionalIntTrackable> input2 = new ArrayList<>();
+        for(int i : input) {
+            input2.add(new FractionalIntTrackable(new FractionalInt(i)));
+        }
+        return new Algo24(new FractionalInt(goal), input2);
     }
 
     private void doit(List<FractionalIntTrackable> in) {
@@ -32,7 +37,7 @@ public class Algo24 {
             return;
         }
         // in process of recursion
-        Set<Pair> existP = new HashSet<Pair>();
+        Set<Pair> existP = new HashSet<>();
         for (int i = 0; i < in.size() - 1; i ++) {
             for (int j = i + 1; j < in.size(); j++) {
                 Pair p = new Pair(in.get(i), in.get(j));
@@ -42,7 +47,7 @@ public class Algo24 {
                     existP.add(p);
                     List<FractionalIntTrackable> expand = p.expand();
                     for (FractionalIntTrackable f : expand) {
-                        List<FractionalIntTrackable> copy = new ArrayList<FractionalIntTrackable>(in);
+                        List<FractionalIntTrackable> copy = new ArrayList<>(in);
                         copy.remove(j);
                         copy.remove(i);
                         copy.add(f);
@@ -66,8 +71,8 @@ public class Algo24 {
     }
 
     private static class Pair {
-        private FractionalIntTrackable pairL;
-        private FractionalIntTrackable pairR;
+        private final FractionalIntTrackable pairL;
+        private final FractionalIntTrackable pairR;
         public Pair(FractionalIntTrackable pairL, FractionalIntTrackable pairR) {
             if (pairL.compareTo(pairR) > 0) {
                 this.pairL = pairL;
@@ -79,7 +84,7 @@ public class Algo24 {
         }
 
         public List<FractionalIntTrackable> expand() {
-            List<FractionalIntTrackable> l = new ArrayList<FractionalIntTrackable>(6);
+            List<FractionalIntTrackable> l = new ArrayList<>(6);
             l.add(pairL.add(pairR));
             l.add(pairL.subtract(pairR));
             l.add(pairL.multiply(pairR));

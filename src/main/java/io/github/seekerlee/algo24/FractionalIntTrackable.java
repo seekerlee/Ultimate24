@@ -29,19 +29,19 @@ public class FractionalIntTrackable implements TrackableArith, Comparable<Fracti
     }
 
     public FractionalIntTrackable multiply(FractionalIntTrackable val) {
-        return new FractionalIntTrackable(fraction.multiply(val.getFraction()), new ArithTracker<FractionalIntTrackable>(this, val, Operator.MULTIPLY));
+        return new FractionalIntTrackable(fraction.multiply(val.getFraction()), new ArithTracker<>(this, val, Operator.MULTIPLY));
     }
 
     public FractionalIntTrackable divide(FractionalIntTrackable val) {
-        return new FractionalIntTrackable(fraction.divide(val.getFraction()), new ArithTracker<FractionalIntTrackable>(this, val, Operator.DIVIDE));
+        return new FractionalIntTrackable(fraction.divide(val.getFraction()), new ArithTracker<>(this, val, Operator.DIVIDE));
     }
 
     public FractionalIntTrackable subtract(FractionalIntTrackable val) {
-        return new FractionalIntTrackable(fraction.subtract(val.getFraction()), new ArithTracker<FractionalIntTrackable>(this, val, Operator.SUBTRACT));
+        return new FractionalIntTrackable(fraction.subtract(val.getFraction()), new ArithTracker<>(this, val, Operator.SUBTRACT));
     }
 
     public FractionalIntTrackable add(FractionalIntTrackable val) {
-        return new FractionalIntTrackable(fraction.add(val.getFraction()), new ArithTracker<FractionalIntTrackable>(this, val, Operator.ADD));
+        return new FractionalIntTrackable(fraction.add(val.getFraction()), new ArithTracker<>(this, val, Operator.ADD));
     }
 
     @Override

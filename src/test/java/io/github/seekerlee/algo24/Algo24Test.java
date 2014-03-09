@@ -1,6 +1,5 @@
 package io.github.seekerlee.algo24;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 /**
@@ -12,21 +11,14 @@ import java.util.Set;
  */
 public class Algo24Test {
     public static void main(String[] a) {
-        ArrayList<FractionalIntTrackable> input = new ArrayList<FractionalIntTrackable>();
-        input.add(new FractionalIntTrackable(new FractionalInt(3)));
-        input.add(new FractionalIntTrackable(new FractionalInt(4)));
-        input.add(new FractionalIntTrackable(new FractionalInt(8)));
-        input.add(new FractionalIntTrackable(new FractionalInt(3)));
-        input.add(new FractionalIntTrackable(new FractionalInt(91)));
-        input.add(new FractionalIntTrackable(new FractionalInt(97)));
-        long t0 = System.currentTimeMillis();
-        Algo24 al = new Algo24(input, new FractionalInt(129));
-        long t1 = System.currentTimeMillis();
+        long t0 = System.nanoTime();
+        Algo24 al = Algo24.newAlgo24(24, 2, 3, 4, 5, 17);
+        long t1 = System.nanoTime();
 
         Set<FractionalIntTrackable> o = al.getOutput();
         for(FractionalIntTrackable t : o) {
             System.out.println(t);
         }
-        System.out.println(t1 - t0);
+        System.out.println((t1 - t0)/1000000);
     }
 }
