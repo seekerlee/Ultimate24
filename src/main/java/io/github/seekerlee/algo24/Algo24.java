@@ -9,11 +9,11 @@ import java.util.*;
  * Time: 上午9:59
  */
 public class Algo24 {
-    final Set<FractionalIntTrackable> output = new HashSet<>();
-    final List<FractionalIntTrackable> input;
+    final Set<TrackableFractionalInt> output = new HashSet<>();
+    final List<TrackableFractionalInt> input;
     final FractionalInt goal;
 
-    public Algo24(FractionalInt goal, List<FractionalIntTrackable> input) {
+    public Algo24(FractionalInt goal, List<TrackableFractionalInt> input) {
         // TODO: check input
         this.input = input;
         this.goal = goal;
@@ -21,14 +21,14 @@ public class Algo24 {
     }
 
     public static Algo24 newAlgo24(int goal, int... input) {
-        ArrayList<FractionalIntTrackable> input2 = new ArrayList<>();
+        ArrayList<TrackableFractionalInt> input2 = new ArrayList<>();
         for(int i : input) {
-            input2.add(new FractionalIntTrackable(new FractionalInt(i)));
+            input2.add(new TrackableFractionalInt(new FractionalInt(i)));
         }
         return new Algo24(new FractionalInt(goal), input2);
     }
 
-    private void doit(List<FractionalIntTrackable> in) {
+    private void doit(List<TrackableFractionalInt> in) {
         // end of recursion
         if (in.size() == 1) {
             if (in.get(0).getFraction().equals(goal)) {
@@ -45,9 +45,9 @@ public class Algo24 {
                     continue;
                 } else {
                     existP.add(p);
-                    List<FractionalIntTrackable> expand = p.expand();
-                    for (FractionalIntTrackable f : expand) {
-                        List<FractionalIntTrackable> copy = new ArrayList<>(in);
+                    List<TrackableFractionalInt> expand = p.expand();
+                    for (TrackableFractionalInt f : expand) {
+                        List<TrackableFractionalInt> copy = new ArrayList<>(in);
                         copy.remove(j);
                         copy.remove(i);
                         copy.add(f);
@@ -58,11 +58,11 @@ public class Algo24 {
         }
     }
 
-    public List<FractionalIntTrackable> getInput() {
+    public List<TrackableFractionalInt> getInput() {
         return input;
     }
 
-    public Set<FractionalIntTrackable> getOutput() {
+    public Set<TrackableFractionalInt> getOutput() {
         return output;
     }
 
@@ -71,9 +71,9 @@ public class Algo24 {
     }
 
     private static class Pair {
-        private final FractionalIntTrackable pairL;
-        private final FractionalIntTrackable pairR;
-        public Pair(FractionalIntTrackable pairL, FractionalIntTrackable pairR) {
+        private final TrackableFractionalInt pairL;
+        private final TrackableFractionalInt pairR;
+        public Pair(TrackableFractionalInt pairL, TrackableFractionalInt pairR) {
             if (pairL.compareTo(pairR) > 0) {
                 this.pairL = pairL;
                 this.pairR = pairR;
@@ -83,8 +83,8 @@ public class Algo24 {
             }
         }
 
-        public List<FractionalIntTrackable> expand() {
-            List<FractionalIntTrackable> l = new ArrayList<>(6);
+        public List<TrackableFractionalInt> expand() {
+            List<TrackableFractionalInt> l = new ArrayList<>(6);
             l.add(pairL.add(pairR));
             l.add(pairL.subtract(pairR));
             l.add(pairL.multiply(pairR));

@@ -7,15 +7,15 @@ import java.math.BigInteger;
  * Date: 13-6-23
  * Time: 上午11:15
  */
-public class FractionalIntTrackable implements TrackableArith, Comparable<FractionalIntTrackable>{
-    private ArithTracker<FractionalIntTrackable> tracker;
+public class TrackableFractionalInt implements TrackableArith, Comparable<TrackableFractionalInt>{
+    private ArithTracker<TrackableFractionalInt> tracker;
     private FractionalInt fraction;
-    public FractionalIntTrackable(FractionalInt fraction, ArithTracker<FractionalIntTrackable> tracker) {
+    public TrackableFractionalInt(FractionalInt fraction, ArithTracker<TrackableFractionalInt> tracker) {
         this.fraction = fraction;
         this.tracker = tracker;
     }
 
-    public FractionalIntTrackable(FractionalInt fraction) {
+    public TrackableFractionalInt(FractionalInt fraction) {
         this.fraction = fraction;
         this.tracker = null;
     }
@@ -28,20 +28,20 @@ public class FractionalIntTrackable implements TrackableArith, Comparable<Fracti
         return fraction.getNumerator();
     }
 
-    public FractionalIntTrackable multiply(FractionalIntTrackable val) {
-        return new FractionalIntTrackable(fraction.multiply(val.getFraction()), new ArithTracker<>(this, val, Operator.MULTIPLY));
+    public TrackableFractionalInt multiply(TrackableFractionalInt val) {
+        return new TrackableFractionalInt(fraction.multiply(val.getFraction()), new ArithTracker<>(this, val, Operator.MULTIPLY));
     }
 
-    public FractionalIntTrackable divide(FractionalIntTrackable val) {
-        return new FractionalIntTrackable(fraction.divide(val.getFraction()), new ArithTracker<>(this, val, Operator.DIVIDE));
+    public TrackableFractionalInt divide(TrackableFractionalInt val) {
+        return new TrackableFractionalInt(fraction.divide(val.getFraction()), new ArithTracker<>(this, val, Operator.DIVIDE));
     }
 
-    public FractionalIntTrackable subtract(FractionalIntTrackable val) {
-        return new FractionalIntTrackable(fraction.subtract(val.getFraction()), new ArithTracker<>(this, val, Operator.SUBTRACT));
+    public TrackableFractionalInt subtract(TrackableFractionalInt val) {
+        return new TrackableFractionalInt(fraction.subtract(val.getFraction()), new ArithTracker<>(this, val, Operator.SUBTRACT));
     }
 
-    public FractionalIntTrackable add(FractionalIntTrackable val) {
-        return new FractionalIntTrackable(fraction.add(val.getFraction()), new ArithTracker<>(this, val, Operator.ADD));
+    public TrackableFractionalInt add(TrackableFractionalInt val) {
+        return new TrackableFractionalInt(fraction.add(val.getFraction()), new ArithTracker<>(this, val, Operator.ADD));
     }
 
     @Override
@@ -71,7 +71,7 @@ public class FractionalIntTrackable implements TrackableArith, Comparable<Fracti
     }
 
     @Override
-    public int compareTo(FractionalIntTrackable o) {
+    public int compareTo(TrackableFractionalInt o) {
         return this.subtract(o).getDenominator().compareTo(BigInteger.ZERO);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -80,10 +80,10 @@ public class FractionalIntTrackable implements TrackableArith, Comparable<Fracti
         if (o == this)
             return true;
 
-        if (!(o instanceof FractionalIntTrackable))
+        if (!(o instanceof TrackableFractionalInt))
             return false;
 
-        FractionalIntTrackable f = (FractionalIntTrackable) o;
+        TrackableFractionalInt f = (TrackableFractionalInt) o;
         boolean eq = this.fraction.equals(f.fraction);
         if(!eq) return false;
         if(this.tracker == null && f.tracker == null) return true;

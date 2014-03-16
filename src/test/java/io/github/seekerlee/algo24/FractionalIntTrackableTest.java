@@ -7,12 +7,12 @@ package io.github.seekerlee.algo24;
  */
 public class FractionalIntTrackableTest {
     public static void main(String[] a) {
-        FractionalIntTrackable f1 = new FractionalIntTrackable(new FractionalInt(8)   , null);
-        FractionalIntTrackable f2 = new FractionalIntTrackable(new FractionalInt(2, 8), null);
-        FractionalIntTrackable f3 = new FractionalIntTrackable(new FractionalInt(3, 8), null);
-        FractionalIntTrackable f4 = new FractionalIntTrackable(new FractionalInt(0, 8), null);
-        FractionalIntTrackable f5 = new FractionalIntTrackable(new FractionalInt(8, 1), null);
-        FractionalIntTrackable f6 = new FractionalIntTrackable(new FractionalInt(5, 8), null);
+        TrackableFractionalInt f1 = new TrackableFractionalInt(new FractionalInt(8)   , null);
+        TrackableFractionalInt f2 = new TrackableFractionalInt(new FractionalInt(2, 8), null);
+        TrackableFractionalInt f3 = new TrackableFractionalInt(new FractionalInt(3, 8), null);
+        TrackableFractionalInt f4 = new TrackableFractionalInt(new FractionalInt(0, 8), null);
+        TrackableFractionalInt f5 = new TrackableFractionalInt(new FractionalInt(8, 1), null);
+        TrackableFractionalInt f6 = new TrackableFractionalInt(new FractionalInt(5, 0), null);
 
         System.out.println(f1);
         System.out.println(f2);
